@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Info">
+    <menu>
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="Quienes somos">
+        </item>
+        <item
+            android:id="@+id/crear"
+            android:icon="@drawable/ic_group"
+            android:title="Crear formulario">
+        </item>
+        <item
+            android:id="@+id/salir"
+            android:icon="@drawable/ic_group"
+            android:title="Salir">
+        </item>
+    </menu>
+
+</item>
+
+</menu>
