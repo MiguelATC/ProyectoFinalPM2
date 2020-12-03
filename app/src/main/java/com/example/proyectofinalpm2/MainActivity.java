@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.proyectofinalpm2.Fragments.CrearForm;
+import com.example.proyectofinalpm2.Fragments.ListaForm;
 import com.example.proyectofinalpm2.Fragments.MainFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -70,6 +71,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentManager=getSupportFragmentManager();
             fragmentTransaction=fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container, new CrearForm());
+            fragmentTransaction.commit();
+        }
+        if (menuItem.getItemId()==R.id.verforms){
+            fragmentManager=getSupportFragmentManager();
+            fragmentTransaction=fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, new ListaForm());
             fragmentTransaction.commit();
         }
         if (menuItem.getItemId()==R.id.salir){

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:title="Info">
+<item android:title="Menu">
     <menu>
         <item
             android:id="@+id/home"
@@ -11,6 +11,11 @@
             android:id="@+id/crear"
             android:icon="@drawable/ic_group"
             android:title="Crear formulario">
+        </item>
+        <item
+            android:id="@+id/verforms"
+            android:icon="@drawable/ic_group"
+            android:title="Ver formularios">
         </item>
         <item
             android:id="@+id/salir"
