@@ -32,46 +32,11 @@ public class ListaForm extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_listaform ,container,false);
         rvListaForms = view.findViewById(R.id.rvListaForms);
+
         rvListaForms.setLayoutManager(new GridLayoutManager(getContext(),1));
         cargarRecyclerView();
         return view;
     }
-
-    private void cargarRecyclerView(){
-        listaForms = new ArrayList<FormularioCrear>();
-        DBlista();
-        listar =  new Listar(listaForms);
-
-        listar.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                formId = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getFormId();
-                mes = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getMes();
-                anio = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getAnio();
-                return false;
-            }
-        });
-
-        /*listar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                Intent intent = new Intent(getContext(),ActivityBill.class);
-                int idForm = listForm.get(rvListForms.getChildAdapterPosition(v)).getIdForm();
-                String name = listForm.get(rvListForms.getChildAdapterPosition(v)).getName();
-                String month = listForm.get(rvListForms.getChildAdapterPosition(v)).getMonth();
-                int year = listForm.get(rvListForms.getChildAdapterPosition(v)).getYear();
-                bundle.putInt("idForm", idForm);
-                bundle.putString("nameForm",name);
-                bundle.putString("monthForm",month);
-                bundle.putInt("yearForm",year);
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });*/
-        rvListaForms.setAdapter(listar);
-    }
-
     private void DBlista() {
 
 
@@ -86,11 +51,49 @@ public class ListaForm extends Fragment {
                 FormularioCrear formularioCrear = new FormularioCrear(
                         cursor.getInt(0),
                         cursor.getString(1),
-                        cursor.getString(2)
+                        cursor.getString(2),
+                        cursor.getString(3)
 
                 );
                 listaForms.add(formularioCrear);
             }while(cursor.moveToNext());
         }
     }
+
+    private void cargarRecyclerView(){
+        listaForms = new ArrayList<FormularioCrear>();
+        DBlista();
+        listar =  new Listar(listaForms);
+        listar.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                formId = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getFormId();
+                mes = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getMes();
+                anio = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getAnio();
+                return false;
+            }
+        });
+
+        listar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(getContext(),Facturas.class);
+                int idForm = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getFormId();
+                String nombre = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getNombre();
+                String mes = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getMes();
+                String anio = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getAnio();
+
+                bundle.putInt("formId", idForm);
+                bundle.putString("nombre",nombre);
+                bundle.putString("mes",mes);
+                bundle.putString("anio",anio);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        rvListaForms.setAdapter(listar);
+    }
+
+
 }

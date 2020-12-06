@@ -26,6 +26,16 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ingrese el nombre"
+            android:inputType="textPersonName"
+            android:paddingTop="15dp"
+
+            />
 
 
         <EditText

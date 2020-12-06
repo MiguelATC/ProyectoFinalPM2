@@ -16,7 +16,7 @@ import com.example.proyectofinalpm2.R;
 
 public class CrearForm extends Fragment {
 
-    private EditText etMes, etAnio;
+    private EditText etMes, etAnio,etNombre;
     private Button btnCrear;
     private View view;
     private FormularioCrear formulario;
@@ -26,7 +26,7 @@ public class CrearForm extends Fragment {
 
 
         view = inflater.inflate(R.layout.fragment_crear,container,false);
-
+        etNombre = view.findViewById(R.id.etNombre);
         etMes = view.findViewById(R.id.etMes);
         etAnio = view.findViewById(R.id.etAnio);
         btnCrear = view.findViewById(R.id.btnCrear);
@@ -36,13 +36,15 @@ public class CrearForm extends Fragment {
         btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String nombre;
                 String mes;
                 String anio;
 
+                nombre=etNombre.getText().toString().trim();
                 mes = etMes.getText().toString().trim();
                 anio = etAnio.getText().toString().trim();
 
-                formulario = new FormularioCrear(mes, anio);
+                formulario = new FormularioCrear(nombre, mes, anio);
                 connectionDB.Insert(formulario);
                 Toast.makeText(getContext(),"Formulario creado",Toast.LENGTH_SHORT).show();
 

@@ -3,19 +3,22 @@ package com.example.proyectofinalpm2.Clases;
 public class FormularioCrear {
 
     private int formId;
+    private String nombre;
     private String mes;
     private String anio;
 
     public FormularioCrear(){
 
     }
-    public FormularioCrear(int formId, String mes, String anio){
+    public FormularioCrear(int formId, String nombre, String mes, String anio){
         this.formId=formId;
+        this.nombre=nombre;
         this.mes=mes;
         this.anio=anio;
     }
 
-    public FormularioCrear(String mes, String anio){
+    public FormularioCrear(String nombre, String mes, String anio){
+        this.nombre=nombre;
         this.mes=mes;
         this.anio=anio;
     }
@@ -26,6 +29,13 @@ public class FormularioCrear {
 
     public void setFormId(int formId) {
         this.formId = formId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getMes() {

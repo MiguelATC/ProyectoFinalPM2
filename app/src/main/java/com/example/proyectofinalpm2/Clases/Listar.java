@@ -41,16 +41,22 @@ public class Listar extends RecyclerView.Adapter<Listar.ViewHolderDatos> impleme
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listaForm.size();
     }
 
     @Override
     public void onClick(View view) {
+        if (listener !=null){
+            listener.onClick(view);
+        }
 
     }
 
     @Override
     public boolean onLongClick(View view) {
+        if (longListener != null){
+            longListener.onLongClick(view);
+        }
         return false;
     }
 
@@ -59,6 +65,7 @@ public class Listar extends RecyclerView.Adapter<Listar.ViewHolderDatos> impleme
         LinearLayout linearLayout;
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
+            tvFormId = itemView.findViewById(R.id.tvFormId);
             tvMes = itemView.findViewById(R.id.tvMes);
             tvAnio = itemView.findViewById(R.id.tvAnio);
             linearLayout = itemView.findViewById(R.id.lyItems);
@@ -67,8 +74,8 @@ public class Listar extends RecyclerView.Adapter<Listar.ViewHolderDatos> impleme
 
         public void Datos(FormularioCrear formularioCrear) {
             tvFormId.setText(String.valueOf(formularioCrear.getFormId()));
-            tvMes.setText("Month: " + formularioCrear.getMes());
-            tvMes.setText("Year: " + formularioCrear.getAnio());
+            tvMes.setText("Año: " + formularioCrear.getMes());
+            tvAnio.setText("Mes: " + formularioCrear.getAnio());
         }
 
         @Override
