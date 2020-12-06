@@ -14,16 +14,26 @@ public class FacturaModel {
     {
 
     }
-    public FacturaModel(int facturaId, int formId, int NIT, int nroFac, int nroAutorizacion, double importe, String fecha, String codigoControl)
-    {
-        this.facturaId=facturaId;
+    public FacturaModel(int facturaId, int NIT, int nroFac, int nroAutorizacion, double importe, String fecha, String codigoControl, int formId) {
+        this.facturaId = facturaId;
+        this.NIT = NIT;
+        this.nroFac = nroFac;
+        this.nroAutorizacion=nroAutorizacion;
+        this.importe=importe;
+        this.fecha=fecha;
+        this.codigoControl=codigoControl;
         this.formId=formId;
+
+    }
+    public FacturaModel(int NIT, int nroFac, int nroAutorizacion, double importe, String fecha, String codigoControl, int formId)
+    {
         this.NIT=NIT;
         this.nroFac=nroFac;
         this.nroAutorizacion=nroAutorizacion;
         this.importe=importe;
         this.fecha=fecha;
         this.codigoControl=codigoControl;
+        this.formId=formId;
 
     }
     public FacturaModel(int facturaId, int nroFac, String fecha, int importe)

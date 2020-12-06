@@ -34,7 +34,7 @@ public class ConnectionDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(String.format("CREATE TABLE IF NOT EXISTS %s(formId INTEGER PRIMARY KEY AUTOINCREMENT,nombre TEXT NOT NULL,mes TEXT NOT NULL, anio TEXT NOT NULL, estado DEFAULT 1);",NOMBRE_TABLA_FORM));
-        sqLiteDatabase.execSQL(String.format("CREATE TABLE IF NOT EXISTS %s(facturaId INTEGER PRIMARY KEY AUTOINCREMENT,NIT INTEGER NOT NULL, nroFactura INTEGER NOT NULL,nroAutorizacion INTEGER NOT NULL, fecha TEXT NOT NULL, importe REAL NOT NULL, formId INTEGER NOT NULL, estado DEFAULT 1);",NOMBRE_TABLA_FACTURA));
+        sqLiteDatabase.execSQL(String.format("CREATE TABLE IF NOT EXISTS %s(facturaId INTEGER PRIMARY KEY AUTOINCREMENT,NIT INTEGER NOT NULL, nroFactura INTEGER NOT NULL, codigoControl TEXT NOT NULL, nroAutorizacion INTEGER NOT NULL, fecha TEXT NOT NULL, importe REAL NOT NULL, formId INTEGER NOT NULL, estado DEFAULT 1);",NOMBRE_TABLA_FACTURA));
 
     }
     @Override

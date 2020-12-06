@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/lista_fac"
+        android:title="Lista factura" />
+    <item
+        android:id="@+id/agregar_fac"
+        android:title="Agregar factura" />
+    <item
+        android:id="@+id/agregar_facqr"
+        android:title="Escanear codigo QR" />
+    <item
+        android:id="@+id/agregar_excel"
+        android:title="Exportar" />
+
+
+</menu>

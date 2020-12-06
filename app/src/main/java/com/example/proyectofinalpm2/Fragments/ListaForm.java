@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyectofinalpm2.Clases.FormularioCrear;
 import com.example.proyectofinalpm2.Clases.Listar;
 import com.example.proyectofinalpm2.R;
+import com.example.proyectofinalpm2.activity_fac;
 
 import java.util.ArrayList;
 
@@ -78,7 +79,7 @@ public class ListaForm extends Fragment {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                Intent intent = new Intent(getContext(),Facturas.class);
+                Intent intent = new Intent(getContext(), activity_fac.class);
                 int idForm = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getFormId();
                 String nombre = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getNombre();
                 String mes = listaForms.get(rvListaForms.getChildAdapterPosition(v)).getMes();
