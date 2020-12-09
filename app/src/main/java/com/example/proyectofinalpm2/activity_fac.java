@@ -1,22 +1,29 @@
 package com.example.proyectofinalpm2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.example.proyectofinalpm2.Clases.ListarFactura;
 import com.example.proyectofinalpm2.Fragments.FragmentCrearFac;
 import com.example.proyectofinalpm2.Fragments.FragmentListFac;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 
 public class activity_fac extends AppCompatActivity {
@@ -26,11 +33,15 @@ public class activity_fac extends AppCompatActivity {
     private FragmentTransaction fragmentTransaction;
     private FragmentManager fragmentManager;
 
+
+
+    TextView txtQr;
+
     int formId;
     String anio;
     String nombre;
     String mes;
-
+    View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +64,8 @@ public class activity_fac extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ListaFactura(fragmentListFac);
+
+
     }
 
     @Override
@@ -79,6 +92,15 @@ public class activity_fac extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
+
+        String datos = result.getContents();
+        txtQr.setText(datos);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.lista_fac:
@@ -89,11 +111,19 @@ public class activity_fac extends AppCompatActivity {
                 bundleArgs.putInt("formId",formId);
                 FragmentCrearFac fragmentCrearFac = new FragmentCrearFac();
                 fragmentCrearFac.setArguments(bundleArgs);
-
                 AgregarFac(fragmentCrearFac);
                 break;
             case R.id.agregar_facqr:
-                Toast.makeText(this, "QR", Toast.LENGTH_SHORT).show();
+
+                new IntentIntegrator(this).initiateScan();
+                setContentView(R.layout.fragment_listafacqr);
+                txtQr = findViewById(R.id.txtQr);
+
+                break;
+
+            case R.id.ver_facqr:
+
+
                 break;
             case  R.id.agregar_excel:
                 Toast.makeText(this, "Export to Excel", Toast.LENGTH_SHORT).show();

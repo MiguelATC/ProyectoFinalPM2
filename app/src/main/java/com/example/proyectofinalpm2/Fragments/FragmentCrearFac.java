@@ -36,6 +36,7 @@ public class FragmentCrearFac extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         view = inflater.inflate(R.layout.fragment_crearfac, container, false);
 
         etNIT = view.findViewById(R.id.etNIT);
@@ -47,7 +48,6 @@ public class FragmentCrearFac extends Fragment {
         btnCrearFactura = view.findViewById(R.id.btnCrearFactura);
 
         facturaControl = new FacturaControl(getContext());
-
         idForm = getArguments().getInt("formId");
         btnCrearFactura.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +70,7 @@ public class FragmentCrearFac extends Fragment {
                     if (insert == -1) {
                         Toast.makeText(getContext(),"Error: Unrecorded invoice",Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getContext(), "Invoice posted", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "datos almacenados", Toast.LENGTH_LONG).show();
 
                     }
                 }

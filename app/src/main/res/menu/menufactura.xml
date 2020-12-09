@@ -11,6 +11,9 @@
         android:id="@+id/agregar_facqr"
         android:title="Escanear codigo QR" />
     <item
+        android:id="@+id/ver_facqr"
+        android:title="Ver facturas escaneadas" />
+    <item
         android:id="@+id/agregar_excel"
         android:title="Exportar" />
 

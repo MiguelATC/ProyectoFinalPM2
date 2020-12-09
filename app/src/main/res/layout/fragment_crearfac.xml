@@ -13,12 +13,13 @@
         android:text="Agregar factura"
         android:textSize="25dp"
         android:textAlignment="center"
+        android:layout_marginTop="70dp"
         android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="120dp"
         android:orientation="vertical">
 
         <EditText
@@ -27,7 +28,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="NIT" />
+            android:hint="NIT" />
 
         <EditText
             android:id="@+id/etNroFac"
@@ -35,7 +36,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="Numero factura" />
+            android:hint="Numero factura" />
 
         <EditText
             android:id="@+id/etNroAutorizacion"
@@ -43,14 +44,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="Nro autorizacion" />
+            android:hint="Nro autorizacion" />
 
         <EditText
             android:id="@+id/etFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="Fecha"
+            android:hint="Fecha"
             android:inputType="date" />
 
         <EditText
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Importe total" />
+            android:hint="Importe total" />
 
         <EditText
             android:id="@+id/etCodigoControl"
@@ -67,13 +68,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Codigo de control" />
+            android:hint="Codigo de control" />
 
         <Button
             android:id="@+id/btnCrearFactura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear formulario" />
+            android:hint="Crear formulario" />
 
     </LinearLayout>
 </FrameLayout>
