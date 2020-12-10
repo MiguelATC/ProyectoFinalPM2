@@ -22,13 +22,25 @@
         android:layout_marginTop="120dp"
         android:orientation="vertical">
 
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="NIT" />
+
         <EditText
             android:id="@+id/etNIT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="NIT" />
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Numero factura" />
 
         <EditText
             android:id="@+id/etNroFac"
@@ -36,7 +48,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Numero factura" />
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nro Autorizacion" />
 
         <EditText
             android:id="@+id/etNroAutorizacion"
@@ -44,15 +61,24 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Nro autorizacion" />
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Fecha" />
 
         <EditText
             android:id="@+id/etFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Fecha"
             android:inputType="date" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Importe total" />
 
         <EditText
             android:id="@+id/etImporte"
@@ -60,7 +86,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Importe total" />
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Codigo de control" />
 
         <EditText
             android:id="@+id/etCodigoControl"
@@ -68,7 +99,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Codigo de control" />
+            />
 
         <Button
             android:id="@+id/btnCrearFactura"

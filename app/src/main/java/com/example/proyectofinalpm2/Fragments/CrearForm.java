@@ -47,12 +47,18 @@ public class CrearForm extends Fragment {
                 formulario = new FormularioCrear(nombre, mes, anio);
                 connectionDB.Insert(formulario);
                 Toast.makeText(getContext(),"Formulario creado",Toast.LENGTH_SHORT).show();
-
+                Limpiar();
             }
         });
 
         return view;
 
 
+    }
+
+    private void Limpiar() {
+        etNombre.setText("");
+        etMes.setText("");
+        etAnio.setText("");
     }
 }

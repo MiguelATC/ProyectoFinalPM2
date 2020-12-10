@@ -114,11 +114,9 @@ public class activity_fac extends AppCompatActivity {
                 AgregarFac(fragmentCrearFac);
                 break;
             case R.id.agregar_facqr:
-
                 new IntentIntegrator(this).initiateScan();
                 setContentView(R.layout.fragment_listafacqr);
                 txtQr = findViewById(R.id.txtQr);
-
                 break;
 
             case R.id.ver_facqr:

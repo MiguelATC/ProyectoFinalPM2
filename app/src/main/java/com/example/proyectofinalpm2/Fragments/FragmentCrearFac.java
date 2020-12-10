@@ -71,6 +71,7 @@ public class FragmentCrearFac extends Fragment {
                         Toast.makeText(getContext(),"Error: Unrecorded invoice",Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getContext(), "datos almacenados", Toast.LENGTH_LONG).show();
+                        Limpiar();
 
                     }
                 }
@@ -107,5 +108,15 @@ public class FragmentCrearFac extends Fragment {
     }
     private String twoDigits(int n) {
         return (n<=9) ? ("0"+n) : String.valueOf(n);
+    }
+
+    private void Limpiar() {
+        etNIT.setText("");
+        etNroAutorizacion.setText("");
+        etFecha.setText("");
+        etCodigoControl.setText("");
+        etImporte.setText("");
+        etNroFactura.setText("");
+
     }
 }
